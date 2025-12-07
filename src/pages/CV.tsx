@@ -70,37 +70,37 @@ export function CV() {
   return (
     <div className="min-h-screen w-full pt-24 px-6">
       <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          className="mb-12"
-        >
-          <div className="flex items-start justify-between mb-6">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-2">
-                Currículum Vitae
-              </h1>
-              <p className="text-lg text-[rgb(var(--secondary))]">
-                Licenciado en Kinesiología ·  Doctorando en Bioingeniería · HealthTech & AI Developer ·
-               
-              </p>
-            </div>
-            <a
-              href={CVFile}
-              download="Andres_Gaitan_CV.pdf"
-              className="flex items-center gap-2 px-6 py-3 bg-[rgb(var(--primary))] text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
-            >
-              <DownloadIcon className="w-4 h-4" />
-              Descargar
-            </a>
-          </div>
-        </motion.div>
+<motion.div
+  initial={{
+    opacity: 0,
+    y: 20,
+  }}
+  animate={{
+    opacity: 1,
+    y: 0,
+  }}
+  className="mb-12"
+>
+  <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between mb-6">
+    <div>
+      <h1 className="text-3xl md:text-5xl font-bold mb-2">
+        Currículum Vitae
+      </h1>
+      <p className="text-base md:text-lg text-[rgb(var(--secondary))]">
+        Licenciado en Kinesiología · Doctorando en Bioingeniería · HealthTech & AI Developer
+      </p>
+    </div>
+
+    <a
+      href={CVFile}
+      download="Andres_Gaitan_CV.pdf"
+      className="flex items-center justify-center gap-2 px-6 py-3 bg-[rgb(var(--primary))] text-white rounded-lg font-medium hover:opacity-90 transition-opacity w-full md:w-auto"
+    >
+      <DownloadIcon className="w-4 h-4" />
+      Descargar
+    </a>
+  </div>
+</motion.div>
 
         {/* Experience */}
         <motion.section
