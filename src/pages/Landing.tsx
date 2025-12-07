@@ -195,11 +195,7 @@ Integra HL7/RS-232, análisis avanzado de curvas, dashboards clínicos y modelos
         >
           <h2 className="text-3xl font-bold mb-6">Mini-About</h2>
           <p className="text-lg text-[rgb(var(--secondary))] mb-4">
-            Soy un profesional híbrido que combina desarrollo de software,
-            investigación académica y experiencia clínica en cuidados críticos.
-            Mi trabajo se centra en crear herramientas digitales que mejoren la
-            toma de decisiones, la seguridad del paciente y la calidad
-            asistencial en UCI.
+            Combino desarrollo de software, investigación y práctica clínica en cuidados críticos para crear soluciones digitales que realmente respondan a los desafíos de la UCI. Mi trabajo se orienta a fortalecer la toma de decisiones, optimizar la seguridad del paciente y elevar la calidad asistencial.
           </p>
           <Link
             to="/about"
