@@ -64,7 +64,7 @@ Integra HL7/RS-232, análisis avanzado de curvas, dashboards clínicos y modelos
       ],
       image: smartventImg,
       github:"https://github.com/AndurGaitan/SmartVent",
-       link: "smart-vent-ruddy.vercel.app",
+       link: "https://smart-vent-ruddy.vercel.app/",
     }
   ];
   const techStack = [
