@@ -64,7 +64,7 @@ export function Navbar() {
           </div>
         </div>
         {/* Mobile Navigation */}
-        <AnimatePresence>
+       {/*   <AnimatePresence>
           {isMobileMenuOpen && <motion.div initial={{
           opacity: 0,
           height: 0
@@ -80,6 +80,39 @@ export function Navbar() {
                 </Link>)}
             </motion.div>}
         </AnimatePresence>
+        y */} 
+        <AnimatePresence>
+  {isMobileMenuOpen && (
+    <motion.div
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: 'auto' }}
+      exit={{ opacity: 0, height: 0 }}
+      className="
+        md:hidden mt-4 pt-4
+        border-t border-[rgb(var(--border))]
+        bg-[rgb(var(--background))]  
+        rounded-2xl shadow-lg       
+      "
+    >
+      {navLinks.map(link => (
+        <Link
+          key={link.path}
+          to={link.path}
+          onClick={() => setIsMobileMenuOpen(false)}
+          className={`block py-3 text-base font-medium px-1
+            ${
+              location.pathname === link.path
+                ? 'text-[rgb(var(--primary))]'
+                : 'text-[rgb(var(--foreground))]'
+            }`}
+        >
+          {link.label}
+        </Link>
+      ))}
+    </motion.div>
+  )}
+</AnimatePresence>
+
       </div>
     </motion.nav>;
 }
