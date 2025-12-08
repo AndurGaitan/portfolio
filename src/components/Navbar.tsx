@@ -41,7 +41,16 @@ export function Navbar() {
     y: -100
   }} animate={{
     y: 0
-  }} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[rgb(var(--background))]/80 backdrop-blur-lg border-b border-[rgb(var(--border))]' : 'bg-transparent'}`}>
+  }} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
+    ${
+      isMobileMenuOpen
+        ? 'bg-[rgb(var(--background))]/80 backdrop-blur-lg border-b border-[rgb(var(--border))]'
+        : isScrolled
+        ? 'bg-[rgb(var(--background))]/80 backdrop-blur-lg border-b border-[rgb(var(--border))]'
+        : 'bg-transparent'
+    }`}>
+      
+      
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="text-xl font-semibold">
@@ -64,7 +73,7 @@ export function Navbar() {
           </div>
         </div>
         {/* Mobile Navigation */}
-       {/*   <AnimatePresence>
+       <AnimatePresence>
           {isMobileMenuOpen && <motion.div initial={{
           opacity: 0,
           height: 0
@@ -80,38 +89,6 @@ export function Navbar() {
                 </Link>)}
             </motion.div>}
         </AnimatePresence>
-        y */} 
-        <AnimatePresence>
-  {isMobileMenuOpen && (
-    <motion.div
-      initial={{ opacity: 0, height: 0 }}
-      animate={{ opacity: 1, height: 'auto' }}
-      exit={{ opacity: 0, height: 0 }}
-      className="
-        md:hidden mt-4 pt-4
-        border-t border-[rgb(var(--border))]
-        bg-[rgb(var(--background))]  
-        rounded-2xl shadow-lg       
-      "
-    >
-      {navLinks.map(link => (
-        <Link
-          key={link.path}
-          to={link.path}
-          onClick={() => setIsMobileMenuOpen(false)}
-          className={`block py-3 text-base font-medium px-1
-            ${
-              location.pathname === link.path
-                ? 'text-[rgb(var(--primary))]'
-                : 'text-[rgb(var(--foreground))]'
-            }`}
-        >
-          {link.label}
-        </Link>
-      ))}
-    </motion.div>
-  )}
-</AnimatePresence>
 
       </div>
     </motion.nav>;
